@@ -21,6 +21,11 @@ _pdmk_arg: --toc
 2. Place template in your document directory or pdmk template directory
 You can use pdmk template directory is `~/.pdmk/template`, while you can place template in your document directory.
 
+3. Run
+```shell
+$ pdmk document.md
+```
+
 ## Directory design
 ### Using pdmk template directory
 ```
