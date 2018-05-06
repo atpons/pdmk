@@ -44,7 +44,7 @@ file_name=`basename $1 .md`
 create_variables $1
 
 if [ -e "$_pdmk_template" ]; then
-  pandoc -o $file_name.$_pdmk_output $1 --template=$_pdmk_template $_pdmk_arg
+  pandoc -o $_pdmk_arg $file_name.$_pdmk_output $1 --template=$_pdmk_template
 else
-  pandoc -o $file_name.$_pdmk_output $1 --template=$HOME/.pdmk/template/$_pdmk_template $_pdmk_arg
+  pandoc -o $_pdmk_arg $file_name.$_pdmk_output $1 --template=$HOME/.pdmk/template/$_pdmk_template
 fi
