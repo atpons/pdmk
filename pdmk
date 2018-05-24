@@ -18,10 +18,17 @@ parse_yaml() {
 
 
 file_name=`basename $1 .md`
-eval $(parse_yaml $1 "")
+grep _pdmk_.*: $1 > .yaml.tmp
+eval $(parse_yaml .yaml.tmp "")
 
 if [ -e "$_pdmk_template" ]; then
   pandoc $_pdmk_arg -o $file_name.$_pdmk_output $1 --template=$_pdmk_template
 else
   pandoc $_pdmk_arg -o $file_name.$_pdmk_output $1 --template=$HOME/.pdmk/template/$_pdmk_template
+fi
+
+if [ -e ".yaml.tmp" ]; then
+  rm .yaml.tmp
+else
+  echo "Error: cannot parse document" >&2
 fi
