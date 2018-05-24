@@ -1,3 +1,0 @@
-_pdmk_template: cs-ex1.tex
-_pdmk_output: pdf
-_pdmk_arg: --toc -F pandoc-crossref --latex-engine=lualatex -N --listings
